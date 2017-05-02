@@ -1,8 +1,10 @@
 <template>
-	<div class="uk-flex uk-flex-center">
+	<div class="uk-flex uk-flex-center uk-padding">
 		<div class="uk-card uk-card-default uk-card-hover uk-card-body">
 
-			<img src="/img/logo.svg" class="uk-align-center logo"/>
+			<router-link to="/">
+				<img src="/img/logo.svg" class="uk-align-center logo"/>
+			</router-link>
 
 			<h3 class="uk-heading-line"><span>Sign in to GitPod</span></h3>
 

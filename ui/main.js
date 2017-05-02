@@ -3,6 +3,7 @@ import VueRouter from "vue-router";
 
 import {store} from "./store";
 import App from "./app.vue";
+import AppNavbar from "./app-navbar.vue";
 import Login from "./login.vue";
 import UserList from "./user/list.vue";
 import UserProfile from "./user/profile.vue";
@@ -14,9 +15,14 @@ const router = new VueRouter({
 	mode: 'history',
 	routes: [
 		{path: "/login", component: Login},
-		{path: "/", component: UserList},
-		{path: "/users/:username", component: UserProfile},
-		{path: "/users/:username/edit", component: UserEdit},
+		{
+			path: "/", component: AppNavbar,
+			children: [
+				{path: "", component: UserList},
+				{path: "/users/:username", component: UserProfile},
+				{path: "/users/:username/edit", component: UserEdit},
+			]
+		},
 	],
 });
 
